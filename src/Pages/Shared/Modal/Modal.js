@@ -52,6 +52,7 @@ const Modal = ({ data, setOpen, reload, setReload }) => {
             <form onSubmit={handleSubmit} className="modal-form">
               <input
                 id="title"
+                required
                 className="input input-title"
                 type="text"
                 placeholder={data.title}
@@ -60,6 +61,7 @@ const Modal = ({ data, setOpen, reload, setReload }) => {
                 id="catId"
                 className="input input-title"
                 type="text"
+                required
                 placeholder={data.category}
               />
               <textarea
