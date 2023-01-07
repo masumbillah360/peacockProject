@@ -6,6 +6,7 @@ const Banner = () => {
   return (
     <div className="banner-container">
       <div className="banner-thumb">
+        {/* https://i.ibb.co/z53BvdV/banner-Thumb.png */}
         <img className="banner-img" src={bannerThumb} alt="" />
       </div>
       <div className="banner-desc">

@@ -1,14 +1,9 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import Banner from "./Pages/Banner/Banner";
-import Newses from "./Pages/Newses/Newses";
+import router from "./router/router";
 
 function App() {
-  return (
-    <div className="">
-      <Banner />
-      <Newses />
-    </div>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;

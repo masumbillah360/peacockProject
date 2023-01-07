@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import News from "./News";
 import "./newses.css";
 
 const Newses = () => {
+  const [collections, setCollections] = useState([]);
+  console.log(collections);
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch("http://localhost:5000/news");
+      const result = await res.json();
+      setCollections(result.data);
+    };
+    getData().catch((err) => console.log(err));
+  }, []);
   return (
     <div className="news-container">
       <div className="page-header">
@@ -12,7 +22,7 @@ const Newses = () => {
         </a>
       </div>
       <div className="card-container">
-        {[...Array(8)].map((d, idx) => (
+        {collections.map((d, idx) => (
           <News key={idx} data={d} />
         ))}
       </div>

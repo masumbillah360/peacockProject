@@ -1,19 +1,17 @@
 import React from "react";
-import cardImage from "../../assets/card-img.png";
 import "./news.css";
 
-const News = () => {
+const News = ({ data }) => {
+  const { title, thumbnail, category, postDate } = data;
   return (
     <div>
       <div>
-        <img className="card-img" src={cardImage} alt="" />
+        <img className="card-img" src={thumbnail} alt="" />
       </div>
       <div className="card-desc">
-        <h1 className="card-title">
-          National Science Day at Chinmaya Degree College
-        </h1>
+        <h1 className="card-title">{title}</h1>
         <div className="card-footer">
-          <p className="footer-date">19th Nov 2021</p>
+          <p className="footer-date">{postDate}</p>
           <a className="card-btn" href="/">
             Read More
           </a>
