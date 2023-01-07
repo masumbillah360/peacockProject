@@ -13,3 +13,16 @@
   gap: 3rem;
   margin-bottom: 1rem;
 }
+
+@media screen and (max-width: 576px) {
+  .page-title {
+    color: #fc916a;
+  }
+  .news-container {
+    padding: 0 1rem;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

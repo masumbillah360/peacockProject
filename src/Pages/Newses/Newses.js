@@ -6,7 +6,7 @@ const Newses = () => {
   return (
     <div className="news-container">
       <div className="page-header">
-        <h1 className="banner-title">Most Read News</h1>
+        <h3 className="banner-title">Most Read News</h3>
         <a className="card-btn" href="/">
           See All
         </a>
