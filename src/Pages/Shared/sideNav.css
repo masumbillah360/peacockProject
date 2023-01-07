@@ -25,3 +25,8 @@
 .link.isActive {
   color: red;
 }
+@media screen and (max-width: 576px) {
+  .side-nav-container {
+    display: none;
+  }
+}
