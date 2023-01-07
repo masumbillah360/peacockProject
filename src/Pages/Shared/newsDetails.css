@@ -1,0 +1,20 @@
+.details-container {
+  position: relative;
+}
+.modal-div {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(65, 65, 65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.body-div {
+  height: 400px;
+  width: 500px;
+  margin: 0 auto;
+  background-color: blueviolet;
+}

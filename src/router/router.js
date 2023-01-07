@@ -9,6 +9,10 @@ const router = createBrowserRouter([
     element: <Home />,
     errorElement: <ErrorPage />,
   },
-  { path: "news/:id", element: <NewsDetails /> },
+  {
+    path: "news/:id",
+    element: <NewsDetails />,
+    loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`),
+  },
 ]);
 export default router;

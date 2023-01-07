@@ -1,20 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./news.css";
 
 const News = ({ data }) => {
-  const { title, thumbnail, category, postDate } = data;
+  const { _id, title, thumbnail, category, postDate } = data;
   return (
     <div>
-      <div>
+      <div className="card-image-container">
         <img className="card-img" src={thumbnail} alt="" />
+        <p className="card-category">{category}</p>
       </div>
       <div className="card-desc">
         <h1 className="card-title">{title}</h1>
         <div className="card-footer">
           <p className="footer-date">{postDate}</p>
-          <a className="card-btn" href="/">
+          <Link className="card-btn" to={`/news/${_id}`}>
             Read More
-          </a>
+          </Link>
         </div>
       </div>
     </div>
