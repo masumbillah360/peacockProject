@@ -1,0 +1,21 @@
+.card-img {
+  height: 100%;
+  width: 100%;
+}
+.card-title {
+  font-size: 20px;
+  margin-top: 2rem;
+  color: #436073;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.footer-date {
+  color: #999999;
+  font-size: 13px;
+}
+.card-btn {
+  color: #fc916a;
+}

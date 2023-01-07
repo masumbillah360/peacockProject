@@ -1,0 +1,31 @@
+.banner-container {
+  display: flex;
+  justify-content: space-around;
+  min-height: 100vh;
+  align-items: center;
+}
+.banner-thumb {
+  width: 50%;
+  height: 100vh;
+  text-align: center;
+  background-color: #436073;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-desc {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #ecf4f9;
+  padding: 0 12rem;
+}
+.banner-title {
+  color: #fc916a;
+}
+.desc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
