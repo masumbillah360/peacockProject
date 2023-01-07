@@ -2,6 +2,33 @@ import React from "react";
 import "./modal.css";
 
 const Modal = ({ data, setOpen }) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const title = form.title.value;
+    const category = form.catId.value;
+    const description = form.descId.value;
+    const date = new Date();
+    const options = { day: "numeric", month: "short", year: "numeric" };
+    const formattedDate = date.toLocaleDateString("en-US", options);
+    const updatedData = {
+      title,
+      category,
+      thumbnail: data.thumbnail,
+      description,
+      postDate: formattedDate,
+    };
+    fetch(`http://localhost:5000/news/${data._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   return (
     <div>
       <div className="modal-container">
@@ -13,11 +40,19 @@ const Modal = ({ data, setOpen }) => {
             <div className="thumb-container">
               <img className="modal-thumb" src={data.thumbnail} alt="" />
             </div>
-            <form className="modal-form">
+            <form onSubmit={handleSubmit} className="modal-form">
               <input
+                id="title"
                 className="input input-title"
                 type="text"
                 placeholder={data.title}
+              />
+              <input
+                id="catId"
+                className="input input-title"
+                type="text"
+                defaultValue={data.category}
+                placeholder={data.category}
               />
               <textarea
                 className="input input-title"
@@ -26,7 +61,9 @@ const Modal = ({ data, setOpen }) => {
                 cols="30"
                 rows="5"
               ></textarea>
-              <input className="input sub-btn" type="submit" value="Update" />
+              <button className="input sub-btn" type="submit">
+                Update
+              </button>
             </form>
           </div>
         </div>
