@@ -1,3 +1,6 @@
+.card-image-container {
+  position: relative;
+}
 .card-img {
   height: 100%;
   width: 100%;
@@ -6,6 +9,15 @@
   font-size: 18px;
   margin-top: 2rem;
   color: #436073;
+}
+.card-category {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: #fc916a;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
 }
 .card-footer {
   display: flex;

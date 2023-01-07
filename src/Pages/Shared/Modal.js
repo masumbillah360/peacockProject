@@ -1,7 +1,10 @@
 import React from "react";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import "./modal.css";
 
 const Modal = ({ data, setOpen }) => {
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -23,11 +26,17 @@ const Modal = ({ data, setOpen }) => {
       method: "PUT",
       headers: {
         "content-type": "application/json",
+        authorization:
+          "beerar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCaWxsYWgiLCJpYXQiOjE2NzMxMTQyMjB9.SsEPaowWm0UrbRMpG9GH5lkjLGWdwRlPF-2zHf48fVw",
       },
       body: JSON.stringify(updatedData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((result) => {
+        toast.success("Updated Successfully");
+        navigate(`/news/${data._id}`);
+        setOpen(false);
+      });
   };
   return (
     <div>

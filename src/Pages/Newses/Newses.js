@@ -7,7 +7,13 @@ const Newses = () => {
   console.log(collections);
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch("http://localhost:5000/news");
+      const res = await fetch("http://localhost:5000/news", {
+        headers: {
+          "content-type": "application/json",
+          authorization:
+            "beerar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCaWxsYWgiLCJpYXQiOjE2NzMxMTQyMjB9.SsEPaowWm0UrbRMpG9GH5lkjLGWdwRlPF-2zHf48fVw",
+        },
+      });
       const result = await res.json();
       setCollections(result.data);
     };
