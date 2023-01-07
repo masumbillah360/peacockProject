@@ -2,7 +2,7 @@
 
 ## [Live Link](https://peacock-project.netlify.app/)
 
-## [Server side Link](https://github.com/masumbillah360/peacockServer)
+## [Server Site Repo](https://github.com/masumbillah360/peacockServer)
 
 # Technology used :
 
