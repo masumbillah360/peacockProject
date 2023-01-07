@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import Modal from "./Modal";
+import Modal from "../Modal/Modal";
+import SideNav from "../Sidebar/SideNav";
 import "./newsDetails.css";
-import SideNav from "./SideNav";
 
 const NewsDetails = () => {
   const data = useLoaderData();

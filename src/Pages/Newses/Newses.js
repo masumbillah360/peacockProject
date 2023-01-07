@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import News from "./News";
+import News from "./News/News";
 import "./newses.css";
 
 const Newses = () => {
