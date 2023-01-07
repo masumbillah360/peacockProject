@@ -5,7 +5,7 @@ import "./sideNav.css";
 const SideNav = ({ reload }) => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/news", {
+    fetch("https://peacock-server.vercel.app/news", {
       headers: {
         "content-type": "application/json",
         authorization: `beerar ${localStorage.getItem("secrete-token")}`,

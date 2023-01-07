@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     path: "news/:id",
     element: <NewsDetails />,
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/news/${params.id}`, {
+      fetch(`https://peacock-server.vercel.app/news/${params.id}`, {
         headers: {
           "content-type": "application/json",
           authorization: `beerar ${localStorage.getItem("secrete-token")}`,

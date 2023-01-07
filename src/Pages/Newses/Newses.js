@@ -6,17 +6,14 @@ const Newses = () => {
   const [collections, setCollections] = useState([]);
   console.log(collections);
   useEffect(() => {
-    const getData = async () => {
-      const res = await fetch("http://localhost:5000/news", {
-        headers: {
-          "content-type": "application/json",
-          authorization: `beerar ${localStorage.getItem("secrete-token")}`,
-        },
-      });
-      const result = await res.json();
-      setCollections(result.data);
-    };
-    getData().catch((err) => console.log(err));
+    fetch("https://peacock-server.vercel.app/news", {
+      headers: {
+        "content-type": "application/json",
+        authorization: `beerar ${localStorage.getItem("secrete-token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setCollections(data.data));
   }, []);
   return (
     <div className="news-container">
@@ -27,8 +24,8 @@ const Newses = () => {
         </a>
       </div>
       <div className="card-container">
-        {collections.map((d, idx) => (
-          <News key={idx} data={d} />
+        {collections.map((d) => (
+          <News key={d._id} data={d} />
         ))}
       </div>
     </div>

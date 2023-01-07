@@ -22,7 +22,7 @@ const Modal = ({ data, setOpen, reload, setReload }) => {
       description,
       postDate: formattedDate,
     };
-    fetch(`http://localhost:5000/news/${data._id}`, {
+    fetch(`https://peacock-server.vercel.app/news/${data._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

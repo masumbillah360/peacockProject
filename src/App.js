@@ -7,7 +7,7 @@ import router from "./router/router";
 function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/jwt", {
+    fetch("https://peacock-server.vercel.app/jwt", {
       method: "POST",
       headers: {
         "contetnt-type": "application/json",
