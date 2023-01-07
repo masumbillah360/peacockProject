@@ -8,7 +8,52 @@
 }
 
 .modal-body {
+  border-radius: 10px;
   background-color: white;
   height: 100%;
   width: 100%;
+  padding: 0.8rem;
+  position: relative;
+}
+.thumb-container {
+  text-align: center;
+}
+.modal-thumb {
+  height: 100px;
+  width: 200px;
+  text-align: center;
+}
+.modal-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.input {
+  width: 100%;
+  border: 1px solid indigo;
+}
+.input-title {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+.sub-btn {
+  height: 2rem;
+  font-size: 1rem;
+  background-color: indigo;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.modal-close {
+  height: 2rem;
+  width: 2rem;
+  background-color: brown;
+  color: white;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }

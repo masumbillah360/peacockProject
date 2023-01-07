@@ -29,7 +29,7 @@ const NewsDetails = () => {
             expedita eos necessitatibus accusantium.
           </p>
           <div>
-            <p>{postDate}</p>
+            <p>Post Date : {postDate}</p>
             <button className="btn" onClick={() => handleUpdate(_id)}>
               Update
             </button>
@@ -38,7 +38,7 @@ const NewsDetails = () => {
       </div>
       {open && (
         <div id="ModalDiv" className="modal-div" onClick={(e) => closeModal(e)}>
-          <Modal id={_id} setOpen={setOpen} />
+          <Modal data={data.data} setOpen={setOpen} />
         </div>
       )}
     </div>
