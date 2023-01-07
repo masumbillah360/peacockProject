@@ -1,0 +1,27 @@
+.side-nav-container {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.link-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.isActive {
+  color: red;
+}
+.link-list {
+  background-color: rgb(75, 75, 75);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+.link {
+  color: white;
+  font-weight: bold;
+}
+.link.isActive {
+  color: red;
+}

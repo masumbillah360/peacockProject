@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "./modal.css";
 
-const Modal = ({ data, setOpen }) => {
+const Modal = ({ data, setOpen, reload, setReload }) => {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,6 +36,7 @@ const Modal = ({ data, setOpen }) => {
         toast.success("Updated Successfully");
         navigate(`/news/${data._id}`);
         setOpen(false);
+        setReload(!reload);
       });
   };
   return (
@@ -60,7 +61,6 @@ const Modal = ({ data, setOpen }) => {
                 id="catId"
                 className="input input-title"
                 type="text"
-                defaultValue={data.category}
                 placeholder={data.category}
               />
               <textarea
