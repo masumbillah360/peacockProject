@@ -1,5 +1,6 @@
 .details-container {
   position: relative;
+  padding: 2rem;
 }
 .modal-div {
   height: 100vh;
@@ -12,9 +13,27 @@
   top: 0;
   left: 0;
 }
-.body-div {
-  height: 400px;
-  width: 500px;
-  margin: 0 auto;
-  background-color: blueviolet;
+.details {
+  display: flex;
+  gap: 2rem;
+}
+.details .title {
+  font: 20px;
+  color: orange;
+  font-weight: bold;
+}
+.details .description-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.btn {
+  height: 2rem;
+  width: 5rem;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  margin-top: 2rem;
+  font-size: 1rem;
 }

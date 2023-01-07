@@ -17,11 +17,11 @@ const NewsDetails = () => {
   };
   return (
     <div className="details-container">
-      <div>
+      <div className="details">
         <img src={thumbnail} alt="" />
-        <div>
-          <h4>{title}</h4>
-          <h5>{category}</h5>
+        <div className="description-details">
+          <h1 className="title">{title}</h1>
+          <h5>Category : {category}</h5>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Reprehenderit veritatis iure nisi maxime mollitia sit, perspiciatis
@@ -30,7 +30,9 @@ const NewsDetails = () => {
           </p>
           <div>
             <p>{postDate}</p>
-            <button onClick={() => handleUpdate(_id)}>Update</button>
+            <button className="btn" onClick={() => handleUpdate(_id)}>
+              Update
+            </button>
           </div>
         </div>
       </div>
