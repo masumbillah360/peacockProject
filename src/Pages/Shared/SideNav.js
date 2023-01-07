@@ -8,8 +8,7 @@ const SideNav = ({ reload }) => {
     fetch("http://localhost:5000/news", {
       headers: {
         "content-type": "application/json",
-        authorization:
-          "beerar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCaWxsYWgiLCJpYXQiOjE2NzMxMTQyMjB9.SsEPaowWm0UrbRMpG9GH5lkjLGWdwRlPF-2zHf48fVw",
+        authorization: `beerar ${localStorage.getItem("secrete-token")}`,
       },
     })
       .then((res) => res.json())

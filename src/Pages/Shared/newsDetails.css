@@ -38,14 +38,14 @@
   gap: 1rem;
 }
 .btn {
-  height: 2rem;
-  width: 7rem;
+  height: 2.5rem;
+  width: 250px;
   background-color: steelblue;
   color: white;
   border-radius: 10px;
   border: none;
   margin-top: 2rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   display: block;
   margin: 0 auto;
 }
