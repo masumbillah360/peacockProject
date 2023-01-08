@@ -26,7 +26,7 @@ const SideNav = ({ reload }) => {
     <div className="side-nav-container">
       <ul className="link-container">
         {data.map((d) => (
-          <li className="link-list">
+          <li key={d._id} className="link-list">
             <NavLink className="link" to={`/news/${d._id}`}>
               {d.title}
             </NavLink>

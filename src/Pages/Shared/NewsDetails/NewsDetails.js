@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useRouteError } from "react-router-dom";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import Modal from "../Modal/Modal";
 import SideNav from "../Sidebar/SideNav";
 import "./newsDetails.css";
 
 const NewsDetails = () => {
   const data = useLoaderData();
+  const error = useRouteError();
+  console.log(error);
   const [reload, setReload] = useState(false);
   const { _id, title, thumbnail, category, postDate } = data.data;
   const [open, setOpen] = useState(false);
@@ -21,6 +24,9 @@ const NewsDetails = () => {
     setOpen(true);
   };
 
+  if (error) {
+    return <ErrorPage />;
+  }
   return (
     <div className="container">
       <SideNav reload={reload} />

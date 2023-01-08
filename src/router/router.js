@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../Pages/Home/Home";
+import Newses from "../Pages/Newses/Newses";
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 import NewsDetails from "../Pages/Shared/NewsDetails/NewsDetails";
 
@@ -8,6 +9,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home />,
     errorElement: <ErrorPage />,
+    children: [{ path: "/news", element: <Newses /> }],
   },
   {
     path: "news/:id",
