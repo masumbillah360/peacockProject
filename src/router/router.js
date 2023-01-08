@@ -12,6 +12,7 @@ const router = createBrowserRouter([
   {
     path: "news/:id",
     element: <NewsDetails />,
+    errorElement: <ErrorPage />,
     loader: ({ params }) =>
       fetch(`https://peacock-server.vercel.app/news/${params.id}`, {
         headers: {

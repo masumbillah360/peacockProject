@@ -13,10 +13,14 @@ const NewsDetails = () => {
     if (event.target.id === "ModalDiv") {
       setOpen(false);
     }
+    // if (event.target.id !== "ModalDiv") {
+    //   setOpen(false);
+    // }
   };
   const handleUpdate = (event) => {
     setOpen(true);
   };
+
   return (
     <div className="container">
       <SideNav reload={reload} />

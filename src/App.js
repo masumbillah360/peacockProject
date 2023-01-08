@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
+import LoadingPage from "./Pages/Shared/LoadingPage/LoadingPage";
 import router from "./router/router";
 
 function App() {
+  const [token, setToken] = useState("");
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("https://peacock-server.vercel.app/jwt", {
@@ -18,16 +20,12 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         localStorage.setItem("secrete-token", data.token);
+        setToken(data.token);
         setLoading(false);
       });
-  }, []);
+  }, [token]);
   if (loading) {
-    return (
-      <div className="loading-container">
-        <h1>Loading....</h1>
-        <h1>Please Wait</h1>
-      </div>
-    );
+    return <LoadingPage />;
   }
   return (
     <>

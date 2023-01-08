@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import LoadingPage from "../LoadingPage/LoadingPage";
 import "./sideNav.css";
 
 const SideNav = ({ reload }) => {
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch("https://peacock-server.vercel.app/news", {
@@ -12,8 +14,14 @@ const SideNav = ({ reload }) => {
       },
     })
       .then((res) => res.json())
-      .then((data) => setData(data.data));
-  }, [reload]);
+      .then((data) => {
+        setData(data.data);
+        setLoading(false);
+      });
+  }, [reload, setLoading]);
+  if (loading) {
+    return <LoadingPage />;
+  }
   return (
     <div className="side-nav-container">
       <ul className="link-container">
